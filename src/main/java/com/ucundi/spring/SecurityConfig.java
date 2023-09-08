@@ -24,9 +24,9 @@ public class SecurityConfig {
                         //Control access privileges
                         .requestMatchers("/camas").authenticated()
                         .requestMatchers("/comida").authenticated()
-                        .requestMatchers("/ropa").permitAll()
-                        .requestMatchers("/servicios","/juguetes").permitAll()
-                        .anyRequest().permitAll()
+                        .requestMatchers("/ropa").authenticated()
+                        .requestMatchers("/servicios","/juguetes").authenticated()
+                        .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults());
         // @formatter:on
